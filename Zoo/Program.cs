@@ -25,15 +25,29 @@ class Program
         var birdZoo = new csBirdZoo(); // Fågelzoo med slumpmässigt antal djur
         Console.WriteLine(birdZoo);
 
-        Console.ForegroundColor = ConsoleColor.White;
-        System.Console.WriteLine("\nSmall Zoo");
-        var n = new csZoo(5, "");
-        Console.WriteLine(n);
+        // Console.ForegroundColor = ConsoleColor.White;
+        // System.Console.WriteLine("\nSmall Zoo");
+        // var n = new csZoo(5, "");
+        // Console.WriteLine(n);
 
-        Console.ForegroundColor = ConsoleColor.Magenta;
-        System.Console.WriteLine("\nLarge Zoo");
-        var n1 = new csZoo(25, "");
-        Console.WriteLine(n1);
+        // Console.ForegroundColor = ConsoleColor.Magenta;
+        // System.Console.WriteLine("\nLarge Zoo");
+        // var n1 = new csZoo(25, "");
+        // Console.WriteLine(n1);
+
+        List<csZoo> everyZoo = new List<csZoo>();
+        everyZoo.Add(africanZoo);
+        everyZoo.Add(nordicZoo);
+        everyZoo.Add(birdZoo);
+
+        foreach (var zoo in everyZoo)
+        {
+            System.Console.WriteLine(zoo);
+            
+        }
+        System.Console.WriteLine($"\nKilos of meat {africanZoo.AfricanMeat}");
+        System.Console.WriteLine($"Number of wolves {nordicZoo.WolfCount}");
+        System.Console.WriteLine($"Number of parrots {birdZoo.ParrotCount}");
     }
 }
 

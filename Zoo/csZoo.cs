@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography.X509Certificates;
 using Seido.Utilities.SeedGenerator;
 
 namespace GU1_Zoo
@@ -7,6 +9,8 @@ namespace GU1_Zoo
     {
         public List<csAnimal> ListOfAnimal { get; set; } = new List<csAnimal>();
         public string Name { get; set; }
+
+        public int ParrotCount {get; set;} = default;
 
         public override string ToString()
         {
@@ -29,8 +33,11 @@ namespace GU1_Zoo
         }
         public csZoo()
         {
-            Name = "Reference Zoo";
+            
         }
+
+        public virtual string Question => $"Hello???";
+
     }
 
     public class csAfricanZoo : csZoo
@@ -70,10 +77,15 @@ namespace GU1_Zoo
             }
         }
 
+        // public override string Question => $"The total meat eaten {AfricanMeat}";
+
+
+
 
         public override string ToString()
         {
             return $"Welcome to {Name}\n" + base.ToString() + $"\nTotal meat eaten per day is: {AfricanMeat}kg";
+            // Parrot Count:{parrotCount}
         }
     }
 
@@ -112,6 +124,8 @@ namespace GU1_Zoo
                 return wolfCount;
             }
         }
+
+        
 
         public override string ToString()
         {
