@@ -12,7 +12,7 @@ namespace GU1_Zoo
 		public int Age { get; set; }
 		public string Name { get; set; }
 
-		public override string ToString() => $"{Name} the {Mood} {Age}yr {Kind}";
+		public override string ToString() => $"{Name} the {Mood} {Age} yr {Kind}";
        
 
         public csAnimal(csSeedGenerator _seeder)

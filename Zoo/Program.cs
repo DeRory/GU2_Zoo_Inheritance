@@ -5,26 +5,35 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, Zoo!");
-
-        /*
-        var rnd = new csSeedGenerator();
-        var a1 = new csAnimal(rnd);
-        Console.WriteLine(a1);
-        */
-
-
+        // Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Green;
+        System.Console.WriteLine("---------------------");
+        Console.WriteLine("\nWelcome to Martins Zoo's\n");
         
-        var n = new csZoo(5, "Small Zoo");
+        var rnd = new csSeedGenerator();
+        
+        // Skapa instanser av olika zoo
+        Console.ForegroundColor = ConsoleColor.Red;
+        var africanZoo = new csAfricanZoo(); // Afrikanskt zoo med slumpmässigt antal djur
+        Console.WriteLine(africanZoo);
+
+        Console.ForegroundColor = ConsoleColor.Blue;
+        var nordicZoo = new csNordicZoo(); // Nordiskt zoo med slumpmässigt antal djur
+        Console.WriteLine(nordicZoo);
+
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        var birdZoo = new csBirdZoo(); // Fågelzoo med slumpmässigt antal djur
+        Console.WriteLine(birdZoo);
+
+        Console.ForegroundColor = ConsoleColor.White;
+        System.Console.WriteLine("\nSmall Zoo");
+        var n = new csZoo(5, "");
         Console.WriteLine(n);
 
-        var n1 = new csZoo(25, "Large Zoo");
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        System.Console.WriteLine("\nLarge Zoo");
+        var n1 = new csZoo(25, "");
         Console.WriteLine(n1);
-
-        
-        var refZoo = new csZoo();
-        Console.WriteLine(refZoo);
-        
     }
 }
 
