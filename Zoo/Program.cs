@@ -5,35 +5,46 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Console.Clear();
         Console.ForegroundColor = ConsoleColor.Green;
-        System.Console.WriteLine("---------------------");
+        System.Console.WriteLine("-------------------------");
         Console.WriteLine("\nWelcome to Martins Zoo's\n");
         
         var rnd = new csSeedGenerator();
-        
-        // Skapa instanser av olika zoo
-        Console.ForegroundColor = ConsoleColor.Red;
-        var africanZoo = new csAfricanZoo(); // Afrikanskt zoo med slumpmässigt antal djur
-        Console.WriteLine(africanZoo);
+                                                               
+        Console.ForegroundColor = ConsoleColor.Red;             // Skapa instanser av olika zoo
+        var africanZoo = new csAfricanZoo();                   // Afrikanskt zoo med slumpmässigt antal djur
 
         Console.ForegroundColor = ConsoleColor.Blue;
-        var nordicZoo = new csNordicZoo(); // Nordiskt zoo med slumpmässigt antal djur
-        Console.WriteLine(nordicZoo);
+        var nordicZoo = new csNordicZoo();                  // Nordiskt zoo med slumpmässigt antal djur
 
         Console.ForegroundColor = ConsoleColor.DarkYellow;
-        var birdZoo = new csBirdZoo(); // Fågelzoo med slumpmässigt antal djur
-        Console.WriteLine(birdZoo);
+        var birdZoo = new csBirdZoo();                      // Fågelzoo med slumpmässigt antal djur
+        
+        // Console.ForegroundColor = ConsoleColor.White;
+        // System.Console.WriteLine("\nSmall Zoo");
+        // var n = new csZoo(5, "");
+        // Console.WriteLine(n);
 
-        Console.ForegroundColor = ConsoleColor.White;
-        System.Console.WriteLine("\nSmall Zoo");
-        var n = new csZoo(5, "");
-        Console.WriteLine(n);
+        // Console.ForegroundColor = ConsoleColor.Magenta;
+        // System.Console.WriteLine("\nLarge Zoo");
+        // var n1 = new csZoo(25, "");
+        // Console.WriteLine(n1);
 
-        Console.ForegroundColor = ConsoleColor.Magenta;
-        System.Console.WriteLine("\nLarge Zoo");
-        var n1 = new csZoo(25, "");
-        Console.WriteLine(n1);
+        List<csZoo> everyZoo = new List<csZoo>();
+        everyZoo.Add(africanZoo);
+        everyZoo.Add(nordicZoo);
+        everyZoo.Add(birdZoo);
+
+        foreach (var zoo in everyZoo)
+        {
+            Console.WriteLine(zoo);
+        }
+        Console.WriteLine("Total Zoo´s summary:\n-------------------------");
+        Console.WriteLine($"{"Kilos of meat:", -20} {africanZoo.AfricanMeat, -10}");
+        Console.WriteLine($"{"Number of wolves:", -20} {nordicZoo.WolfCount, -10}");
+        Console.WriteLine($"{"Number of parrots:", -20} {birdZoo.ParrotCount, -10}");
+        Console.WriteLine($"{"Number of Animals:", -20} {csZoo.TotalAnimalsRegistered, -10}");
+        Console.WriteLine("-------------------------\n");
     }
 }
 
