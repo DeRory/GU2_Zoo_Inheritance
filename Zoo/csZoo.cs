@@ -17,29 +17,7 @@ namespace GU1_Zoo
 
         public List<csAnimal> ListOfAnimal { get; set; } = new List<csAnimal>();
         public string Name { get; set; }
-        public static int TotalAnimalsRegistered { get;  set; } = 0;
-        public virtual int ParrotCount { get; } = 0;
-        public virtual int WolfCount { get; } = 0;
-        public virtual int AfricanMeat { get; } = 0;
-        public int nrZooAnimals => ListOfAnimal.Count;
 
-<<<<<<< HEAD
-        public bool AreCarnivorePresent                                                          // Controlls if carnivore is active in zoo.
-        {
-            get
-            {
-                return ListOfAnimal.Any(animal => carnivores.Contains(animal.Kind));
-            }
-        }
-        public static int GetTotalAnimalsRegistered()                                           // tracks total animlas seeded to zooz
-        {
-            return TotalAnimalsRegistered;                                                      // returns
-        }
-        
-=======
-        public int ParrotCount {get; set;} = default;
-
->>>>>>> 35b2c256cbf02094e6fe0dd4cd597a5d6183d23a
         public override string ToString()
         {
             string sRet = "";
@@ -65,21 +43,10 @@ namespace GU1_Zoo
                 TotalAnimalsRegistered++;
             }
         }
-<<<<<<< HEAD
-        public csZoo() {}
-
-        public virtual string Question => $"Hello???";        ///// WOLF THREAT?
-
-    
-=======
         public csZoo()
         {
-            
+            Name = "Reference Zoo";
         }
-
-        public virtual string Question => $"Hello???";
-
->>>>>>> 35b2c256cbf02094e6fe0dd4cd597a5d6183d23a
     }
 
     public class csAfricanZoo : csZoo
@@ -120,35 +87,10 @@ namespace GU1_Zoo
             }
         }
 
-<<<<<<< HEAD
-        public override string ToString()
-        {
-            string formattedAnimals = $"\n";                                 // writes output with formatting
-            string separator = new string('-', 40) + "\n";
-            string CarnivoreStatus = AreCarnivorePresent ? "Carnivore Present" : "No Carnivores";
-
-            string summaryKPI =                                                             
-                                $"\n{Name} Summary KPI:\n" +
-                                $"-------------------------\n" +
-                                $"{"Meat eaten per day:",-20}{AfricanMeat,-10}\n" +
-                                $"{"Parrot registered:",-20}{ParrotCount,-10}\n" +
-                                $"{"Wolves registered:",-20}{WolfCount,-10}\n" +
-                                $"{"Animals registered:",-20}{nrZooAnimals,-10}\n" +
-                                $"{"Carnivore Status:",-20}{CarnivoreStatus,-10}\n";
-
-             return $"{separator}Welcome to {Name}\n{separator}" + base.ToString() +
-             formattedAnimals + separator + summaryKPI;
-=======
-        // public override string Question => $"The total meat eaten {AfricanMeat}";
-
-
-
 
         public override string ToString()
         {
             return $"Welcome to {Name}\n" + base.ToString() + $"\nTotal meat eaten per day is: {AfricanMeat}kg";
-            // Parrot Count:{parrotCount}
->>>>>>> 35b2c256cbf02094e6fe0dd4cd597a5d6183d23a
         }
     }
 
@@ -188,12 +130,9 @@ namespace GU1_Zoo
             }
         }
 
-<<<<<<< HEAD
-        public bool AreCarnivorePresent => WolfCount > 0;
-=======
         
 
->>>>>>> 35b2c256cbf02094e6fe0dd4cd597a5d6183d23a
+        public bool AreCarnivorePresent => WolfCount > 0;
         public override string ToString()
         { 
             string formattedAnimals = $"\n";                                                        // writes output with formatting
