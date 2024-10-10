@@ -23,6 +23,7 @@ namespace GU1_Zoo
         public virtual int AfricanMeat { get; } = 0;
         public int nrZooAnimals => ListOfAnimal.Count;
 
+<<<<<<< HEAD
         public bool AreCarnivorePresent                                                          // Controlls if carnivore is active in zoo.
         {
             get
@@ -35,6 +36,10 @@ namespace GU1_Zoo
             return TotalAnimalsRegistered;                                                      // returns
         }
         
+=======
+        public int ParrotCount {get; set;} = default;
+
+>>>>>>> 35b2c256cbf02094e6fe0dd4cd597a5d6183d23a
         public override string ToString()
         {
             string sRet = "";
@@ -60,11 +65,21 @@ namespace GU1_Zoo
                 TotalAnimalsRegistered++;
             }
         }
+<<<<<<< HEAD
         public csZoo() {}
 
         public virtual string Question => $"Hello???";        ///// WOLF THREAT?
 
     
+=======
+        public csZoo()
+        {
+            
+        }
+
+        public virtual string Question => $"Hello???";
+
+>>>>>>> 35b2c256cbf02094e6fe0dd4cd597a5d6183d23a
     }
 
     public class csAfricanZoo : csZoo
@@ -105,6 +120,7 @@ namespace GU1_Zoo
             }
         }
 
+<<<<<<< HEAD
         public override string ToString()
         {
             string formattedAnimals = $"\n";                                 // writes output with formatting
@@ -122,6 +138,17 @@ namespace GU1_Zoo
 
              return $"{separator}Welcome to {Name}\n{separator}" + base.ToString() +
              formattedAnimals + separator + summaryKPI;
+=======
+        // public override string Question => $"The total meat eaten {AfricanMeat}";
+
+
+
+
+        public override string ToString()
+        {
+            return $"Welcome to {Name}\n" + base.ToString() + $"\nTotal meat eaten per day is: {AfricanMeat}kg";
+            // Parrot Count:{parrotCount}
+>>>>>>> 35b2c256cbf02094e6fe0dd4cd597a5d6183d23a
         }
     }
 
@@ -161,7 +188,12 @@ namespace GU1_Zoo
             }
         }
 
+<<<<<<< HEAD
         public bool AreCarnivorePresent => WolfCount > 0;
+=======
+        
+
+>>>>>>> 35b2c256cbf02094e6fe0dd4cd597a5d6183d23a
         public override string ToString()
         { 
             string formattedAnimals = $"\n";                                                        // writes output with formatting
